@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!--Style Sheet -->
+    <link rel="stylesheet" href="/css/app.css" />
+    <!--FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+      crossorigin="anonymous"
+    />
+    <title>Pokedex Homepage! Index</title>
+  </head>
+
+  
+  <body>
+    <div class="nav-bar">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#pokemonCardHolder">Pokemons</a></li>
+        <li><a href="http://localhost:3000/pokemon/new">New Pokemon</a></li>
+      </ul>
+    </div>
+    <div class="container">
+      <div class="pokemonTitle">
+        <h1>Pokémon</h1>
+      </div>
+      <div>
+        <div class="ball">
+          <div class="button"></div>
+        </div>
+      </div>
+    </div>
+
+    <section id="pokemonCardHolder" class="table-container">
+      <div class="pokeCards">
+        <% for (let i = 0; i < pokemons.length; i++) { %>
+        <div class="card">
+          <div class="card-header">
+            <p>
+              <a href="pokemon/<%= i %>"><%= pokemons[i].name; %></a>
+            </p>
+
+            <div>
+              <a href="pokemon/<%= i %>/edit"
+                ><i class="fas fa-pencil-alt cool"></i
+              ></a>
+              <form action="/pokemon/<%=i; %>?_method=DELETE" method="POST">
+                <button type="submit" class="btn btn-success">
+                  <i class="fas fa-trash-alt danger"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+          <div class="card-main">
+            <a href="pokemon/<%= i %>">
+              <img
+                class="material-icons"
+                src="<%= pokemons[i].img%>"
+                alt="<%= pokemons[i].name %>"
+              />
+            </a>
+            <div class="main-description">
+              <p>Attack: <span><%= pokemons[i].stats.attack; %></span></p>
+              <p>HP: <span><%= pokemons[i].stats.hp; %></span></p>
+            </div>
+          </div>
+        </div>
+        <% } %>
+      </div>
+    </section>
+    <svg viewBox="0 0 100 25">
+      <path fill="#fcd458" d="M0 30 V12 Q30 17 55 12 T100 11 V30z"></path>
+    </svg>
+
+    <footer>
+      <p>&copy 2019 Bruno DaSilva <span> Pokedex App</span></p>
+    </footer>
+  </body>
+</html>

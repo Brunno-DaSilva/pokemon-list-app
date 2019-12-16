@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!--Style Sheet -->
+    <link rel="stylesheet" href="/css/new.css" />
+    <!--FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+      crossorigin="anonymous"
+    />
+    <title>New Page Pokemon</title>
+  </head>
+  <body>
+    <div class="nav-bar">
+        <div class="nav-bar">
+            <ul>
+              <li><a href="http://localhost:3000/pokemon">Home</a></li>
+              <li><a href="http://localhost:3000/pokemon#pokemonCardHolder">Pokemons</a></li>
+              <li><a href="http://localhost:3000/pokemon/new">New Pokemon</a></li>
+            </ul>
+          </div>
+
+    <div class="container">
+      <h1>Add New Pokemon</h1>
+
+      
+        <form action="/pokemon" method="POST">
+          Name: <input type="text" name="name" placeholder="Picachu" /><br />
+          Attack: <input type="text" name="attack" placeholder="70" /><br />
+           HP: <input type="text" name="hp" placeholder="50" /><br />
+          Normal Habilities: <input type="text" name="normal" placeholder="Static" /><br />
+          Hidden Habilities: <input type="text" name="hidden" placeholder="Lightningrod" /><br />
+         Classification: <input type="text" name="classification" placeholder="Mouse Pokemon" /><br />
+         Image URL: <input type="text" name="img" placeholder="http://img.pokemondb.net/artwork/pikachu.jpg" /><br />
+          <br />
+          <input type="submit" name="" value="Create Item" />
+        </form>
+      
+      <a class="button" href="http://localhost:3000/pokemon#pokemonCardHolder"
+        >G o  B a c k</a
+      >
+    </div>
+
+    <svg viewBox="0 0 100 25">
+      <path fill="#fcd458" d="M0 30 V12 Q30 17 55 12 T100 11 V30z"></path>
+    </svg>
+    <footer>
+      <p>&copy 2019 Bruno DaSilva <span> Budget App</span></p>
+    </footer>
+  </body>
+</html>
