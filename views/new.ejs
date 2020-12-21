@@ -17,32 +17,58 @@
   </head>
   <body>
     <div class="nav-bar">
-        <div class="nav-bar">
-            <ul>
-              <li><a href="http://localhost:3000/pokemon">Home</a></li>
-              <li><a href="http://localhost:3000/pokemon#pokemonCardHolder">Pokemons</a></li>
-              <li><a href="http://localhost:3000/pokemon/new">New Pokemon</a></li>
-            </ul>
-          </div>
+      <ul>
+        <li>
+          <a href="https://pokemon-list-app.herokuapp.com/pokemon">
+            <img
+              src="https://res.cloudinary.com/duprwuo4j/image/upload/v1574831158/Logo/BLOGO_k36v5y.png"
+              alt="logo"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://pokemon-list-app.herokuapp.com/pokemon#pokemonCardHolder"
+            >Pokémons</a
+          >
+        </li>
+        <li>
+          <a href="https://pokemon-list-app.herokuapp.com/pokemon/new"
+            >New Pokemon</a
+          >
+        </li>
+      </ul>
+    </div>
 
     <div class="container">
       <h1>Add New Pokemon</h1>
 
-      
-        <form action="/pokemon" method="POST">
-          Name: <input type="text" name="name" placeholder="Picachu" /><br />
-          Attack: <input type="text" name="attack" placeholder="70" /><br />
-           HP: <input type="text" name="hp" placeholder="50" /><br />
-          Normal Habilities: <input type="text" name="normal" placeholder="Static" /><br />
-          Hidden Habilities: <input type="text" name="hidden" placeholder="Lightningrod" /><br />
-         Classification: <input type="text" name="classification" placeholder="Mouse Pokemon" /><br />
-         Image URL: <input type="text" name="img" placeholder="http://img.pokemondb.net/artwork/pikachu.jpg" /><br />
-          <br />
-          <input type="submit" name="" value="Create Item" />
-        </form>
-      
+      <form action="/pokemon" method="POST">
+        Name: <input type="text" name="name" placeholder="Picachu" /><br />
+        Attack: <input type="text" name="attack" placeholder="70" /><br />
+        HP: <input type="text" name="hp" placeholder="50" /><br />
+        Normal Habilities:
+        <input type="text" name="normal" placeholder="Static" /><br />
+        Hidden Habilities:
+        <input type="text" name="hidden" placeholder="Lightningrod" /><br />
+        Classification:
+        <input
+          type="text"
+          name="classification"
+          placeholder="Mouse Pokemon"
+        /><br />
+        Image URL:
+        <input
+          type="text"
+          name="img"
+          placeholder="http://img.pokemondb.net/artwork/pikachu.jpg"
+        /><br />
+        <br />
+        <input type="submit" name="" value="Create Item" />
+      </form>
+
       <a class="button" href="http://localhost:3000/pokemon#pokemonCardHolder"
-        >G o  B a c k</a
+        >G o B a c k</a
       >
     </div>
 
