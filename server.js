@@ -28,9 +28,16 @@ app.use(methodOverride("_method"));
 //================
 //  Index
 //================
+// Default route for "/"
+app.get("/", (req, res) => {
+  res.render("index.ejs", {
+    pokemons: pokemons,
+  });
+});
+
 app.get("/pokemon", (req, res) => {
   res.render("index.ejs", {
-    pokemons: pokemons
+    pokemons: pokemons,
   });
 });
 
@@ -39,7 +46,7 @@ app.get("/pokemon", (req, res) => {
 //================
 app.get("/pokemon/new", (req, res) => {
   res.render("new.ejs", {
-    pokemons: pokemons
+    pokemons: pokemons,
   });
 });
 
@@ -55,7 +62,7 @@ app.post("/pokemon", (req, res) => {
     stats: {
       hp: req.body.hp,
       attack: req.body.attack,
-      defense: req.body.defense
+      defense: req.body.defense,
     },
     damages: {
       normal: req.body.normal,
@@ -74,15 +81,15 @@ app.post("/pokemon", (req, res) => {
       ghost: req.body.ghost,
       dragon: req.body.dragon,
       dark: req.body.dark,
-      steel: req.body.steel
+      steel: req.body.steel,
     },
     misc: {
       abilities: {
         normal: [req.body.normal],
-        hidden: [req.body.hidden]
+        hidden: [req.body.hidden],
       },
-      classification: req.body.classification
-    }
+      classification: req.body.classification,
+    },
   };
   pokemons.push(newPokemon);
   res.redirect("/pokemon");
@@ -93,7 +100,7 @@ app.post("/pokemon", (req, res) => {
 //================
 app.get("/pokemon/:id", (req, res) => {
   res.render("show.ejs", {
-    pokemons: pokemons[req.params.id]
+    pokemons: pokemons[req.params.id],
   });
 });
 
@@ -104,7 +111,7 @@ app.get("/pokemon/:id/edit", (req, res) => {
   res.render("edit.ejs", {
     pokemons: pokemons[req.params.id],
     index: req.params.id,
-    pokemons: pokemons
+    pokemons: pokemons,
   });
 });
 
@@ -117,7 +124,7 @@ app.put("/pokemon/:id", (req, res) => {
     stats: {
       hp: req.body.hp,
       attack: req.body.attack,
-      defense: req.body.defense
+      defense: req.body.defense,
     },
     damages: {
       normal: req.body.normal,
@@ -136,15 +143,15 @@ app.put("/pokemon/:id", (req, res) => {
       ghost: req.body.ghost,
       dragon: req.body.dragon,
       dark: req.body.dark,
-      steel: req.body.steel
+      steel: req.body.steel,
     },
     misc: {
       abilities: {
         normal: [req.body.normal],
-        hidden: [req.body.hidden]
+        hidden: [req.body.hidden],
       },
-      classification: req.body.classification
-    }
+      classification: req.body.classification,
+    },
   };
 
   res.redirect("/pokemon");
@@ -164,5 +171,5 @@ app.delete("/pokemon/:id", (req, res) => {
 //  Listening Port
 //=====================
 app.listen(port, () => {
-  console.log("I am listening on port 3000");
+  console.log(`I am listening on port  ${port}`);
 });
